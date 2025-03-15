@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Syne:wght@400..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="about" class="about">
+        <div class="empty"></div>
+        <article>
+            <div class="title">
+                <h1>
+                    <p>Joaquín Pérez</p>Designer and Creative
+                </h1>
+            </div>
+            <div class="description">
+                <p>Hi! This is my project from the Domestika Course "HTML, CSS and JavaScript for begginers" taught by
+                    Yannick Gregoire. To recognize more about front-end development, I created this website to
+                    understand more about coding. Thanks for passing by.</p>
+            </div>
+        </article>
+    </section>
+
+    <section id="services" class="service service-html sticky">
+        <article>
+            <figure>
+                <img src="img/diamond.png" width="200" />
+            </figure>
+            <div class="text">
+                <h2>HTML</h2>
+                <p>HTML, which stands for HyperText Markup Language, is the standard language used to create and design web pages. It provides the basic structure and content of a webpage, which is then styled and enhanced by other technologies like CSS (Cascading Style Sheets) and JavaScript.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">More about HTML</a>
+            </div>
+        </article>
+    </section>
+
+    <section class="service service-css sticky">
+        <article>
+            <figure>
+                <img src="img/triangle.png" width="200" />
+            </figure>
+            <div class="text">
+                <h2>CSS</h2>
+                <p>CSS, which stands for Cascading Style Sheets, is a stylesheet language used to describe the presentation and styling of a document written in HTML (or XML). While HTML defines the structure and content of a webpage, CSS controls how that content looks, including layout, colors, fonts, and more.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">More about CSS</a>
+            </div>
+        </article>
+    </section>
+
+    <section class="service service-js sticky">
+        <article>
+            <figure>
+                <img src="img/octagon.png" width="200" />
+            </figure>
+            <div class="text">
+                <h2>JS</h2>
+                <p>JS, or JavaScript, is a versatile and widely-used programming language primarily known for adding interactivity and dynamic behavior to web pages. It is one of the core technologies of the web, alongside HTML (for structure) and CSS (for styling). JavaScript enables developers to create rich, interactive, and responsive user experiences.</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">More about JS</a>
+            </div>
+        </article>
+    </section>
+
+    <section id="contact" class="contact full-screen">
+        <a href="mailto:jperezoyarce@gmail.com">jperezoyarce@gmail.com</a>
+    </section>
+    <script>
+
+        let emptyElement = document.querySelector('.about .empty');
+        let titleElement = document.querySelector('.about .title');
+        let figureElements = document.querySelectorAll('.service figure');
+
+
+
+        window.addEventListener('mousemove', handleMouseMove);
+
+        function handleMouseMove(event) {
+            emptyElement.style.flexBasis = event.clientX / 2.5 + 'px';
+            titleElement.style.flexBasis = event.clientY / 2 + 'px';
+
+            figureElements.forEach(function (element) {
+                element.style.flexBasis = (window.innerWidth - event.clientX) + 'px';
+            });
+        }
+
+    </script>
+</body>
+
+</html>
